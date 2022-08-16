@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.gopay.BuildConfig
+import com.gopay.network.ApiService
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -56,6 +57,13 @@ class NetworkModule {
     fun providesOkhttpCache(context: Context): Cache {
         val cacheSize = 10 * 1024 * 1024 // 10 MB
         return Cache(context.cacheDir, cacheSize.toLong())
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): ApiService{
+        return retrofit.create(ApiService::class.java)
     }
 
     @Provides

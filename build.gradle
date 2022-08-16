@@ -36,10 +36,12 @@ buildscript {
         ]
 
         /*https://github.com/google/dagger#dagger*/
-        daggerVersion = '2.28.3'
+        daggerVersion = '2.21'
         daggerDep = [
                 core    : "com.google.dagger:dagger:${daggerVersion}",
                 compiler: "com.google.dagger:dagger-compiler:${daggerVersion}",
+                daggerAndroidSupport: "com.google.dagger:dagger-android-support:${daggerVersion}",
+                daggerProcessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
         ]
 
         /*https://dl.google.com/dl/android/maven2/index.html*/
